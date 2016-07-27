@@ -1,2 +1,2 @@
-angular.module("threeJs", []);
+angular.module("threeQuestions", []);
 

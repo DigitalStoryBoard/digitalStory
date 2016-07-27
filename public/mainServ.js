@@ -1,3 +1,3 @@
-angular.module('threeJs').service('mainServ', function($http){
+angular.module('threeQuestions').service('mainServ', function($http){
 	
 });

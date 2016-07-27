@@ -1,4 +1,4 @@
-angular.module('threeJs').controller('mainCtrl', function($scope, mainServ){
+angular.module('threeQuestions').controller('mainCtrl', function($scope, mainServ){
 
 	
 	
