@@ -13,12 +13,12 @@ angular.module("threeQuestions", [])
 
   //////// cover page - landing page////////////////
   var coverFadeOut = new ScrollMagic.Scene({
-    triggerElement: '.cover',
+    triggerElement: '.cover-wrapper',
     triggerHook: .5,
     offset: 600,
   })
 
-  .setClassToggle('.cover', 'fade-out') // add class to project01
+  .setClassToggle('.cover-wrapper', 'fade-out') // add class to project01
   .addIndicators({
     name: 'cover scene',
     colorTrigger: 'black',
@@ -29,12 +29,12 @@ angular.module("threeQuestions", [])
 
 ///////page 1 For Nikolia text/////////////////////////////
   var nikoliaFadin = new ScrollMagic.Scene({
-    triggerElement: '#page1',
+    triggerElement: '#page1-wrapper',
     triggerHook: 0.7,
     offset: 100,
   })
-  .setTween("#page1", {scale: 2})
-  .setClassToggle('#page1', 'fade-in') // add class to project01
+  .setTween("#page1-wrapper", {scale: 2})
+  .setClassToggle('#page1-wrapper', 'fade-in') // add class to project01
   .addIndicators({
     name: 'fade scene',
     colorTrigger: 'black',
@@ -45,12 +45,12 @@ angular.module("threeQuestions", [])
 
 
   var nikoliaPin = new ScrollMagic.Scene({
-    triggerElement: '#page1',
+    triggerElement: '#page1-wrapper',
     triggerHook: 0,
     offset: 0,
     duration: 900
   })
-  .setPin('#page1', {pushFollowers: true})
+  .setPin('#page1-wrapper', {pushFollowers: true})
 
   .addTo(controller);
 

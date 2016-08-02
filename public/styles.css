@@ -2,23 +2,23 @@ body {
   text-align: center;
 }
 
-.cover {
+.cover-wrapper {
   opacity: 1;
   transition: all 3s ease-out;
 }
 
-.cover.fade-out {
+.cover-wrapper.fade-out {
   opacity: 0;
   /*transition: all 3s ease-out;*/
 }
 
-#page1 {
+#page1-wrapper {
     padding: 200px;
     opacity: 0;
     /*transform: translateY(50px);*/
     transition: all 3s ease-out;
 }
-#page1.fade-in {
+#page1-wrapper.fade-in {
     opacity: 1;
     /*transform: translateY(0);*/
 }
