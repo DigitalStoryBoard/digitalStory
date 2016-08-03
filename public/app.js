@@ -27,7 +27,7 @@ angular.module("threeQuestions", [])
   var coverFadeOut = new ScrollMagic.Scene({
     triggerElement: '.cover-wrapper',
     triggerHook: .5,
-    offset: 600,
+    offset: 800,
   })
 
   .setClassToggle('.cover-wrapper', 'fade-out') // add class to project01
@@ -38,11 +38,6 @@ angular.module("threeQuestions", [])
     colorEnd: 'pink'
   }) // this requires a plugin
   .addTo(controller);
-
-
-
-
-
 
 
   var coverTitleFadeIn = new ScrollMagic.Scene({
@@ -82,33 +77,60 @@ angular.module("threeQuestions", [])
 
 
 ///////page 1 For Nikolia text/////////////////////////////
-  var nikoliaFadin = new ScrollMagic.Scene({
-    triggerElement: '#page1-wrapper',
+  var nikoliaFadinBg = new ScrollMagic.Scene({
+    triggerElement: '.page1-bg',
     triggerHook: 0.7,
     offset: 100,
   })
-  .setTween("#page1-wrapper", {scale: 2})
-  .setClassToggle('#page1-wrapper', 'fade-in') // add class to project01
+  .setTween(".page1-bg", {opacity: 1, delay: 1.5})
+  .setClassToggle('.page1-bg', 'fade-in') // add class to project01
   .addIndicators({
-    name: 'fade Nikolia scene',
+    name: 'fade NikoliaBg scene',
     colorTrigger: 'black',
     colorStart: '#75C695',
     colorEnd: 'pink'
   })
   .addTo(controller);
 
+  var nikoliaFadinTxt = new ScrollMagic.Scene({
+    triggerElement: '.page1-nikText',
+    triggerHook: 0.7,
+    offset: -300,
+  })
+  .setTween(".page1-nikText", {opacity: 1, scale: 2, delay: 2})
+  .setClassToggle('.page1-nikText', 'fade-in') // add class to project01
+  .addIndicators({
+    name: 'fade NikoliaTxt scene',
+    colorTrigger: 'black',
+    colorStart: '#75C695',
+    colorEnd: 'pink'
+  })
+  .addTo(controller);
 
-  var nikoliaPin = new ScrollMagic.Scene({
-    triggerElement: '#page1-wrapper',
+  var nikoliaPinBg = new ScrollMagic.Scene({
+    triggerElement: '.page1-bg',
     triggerHook: 0,
     offset: 0,
-    duration: 900
+    duration: 500
   })
-  .setPin('#page1-wrapper', {pushFollowers: true})
+  .setPin('.page1-bg', {pushFollowers: true})
 
   .addTo(controller);
 
-
+  var nikoliaFadinBg = new ScrollMagic.Scene({
+    triggerElement: '.page1-bg',
+    triggerHook: 0.7,
+    offset: 800,
+  })
+  .setTween(".page1-bg", {opacity: 0, delay: 1.5})
+  .setClassToggle('.page1-bg', 'fade-in') // add class to project01
+  .addIndicators({
+    name: 'fadeOut NikoliaBg scene',
+    colorTrigger: 'black',
+    colorStart: '#75C695',
+    colorEnd: 'pink'
+  })
+  .addTo(controller);
 ///////////Page 2 ///////////////////////////
 
 
