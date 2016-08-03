@@ -83,12 +83,12 @@ angular.module("threeQuestions", [])
 
 ///////page 1 For Nikolia text/////////////////////////////
   var nikoliaFadin = new ScrollMagic.Scene({
-    triggerElement: '#page1-wrapper',
+    triggerElement: '.page1-wrapper',
     triggerHook: 0.7,
     offset: 100,
   })
-  .setTween("#page1-wrapper", {scale: 2})
-  .setClassToggle('#page1-wrapper', 'fade-in') // add class to project01
+  .setTween(".page1-wrapper", {scale: 2})
+  .setClassToggle('.page1-wrapper', 'fade-in') // add class to project01
   .addIndicators({
     name: 'fade Nikolia scene',
     colorTrigger: 'black',
@@ -99,7 +99,7 @@ angular.module("threeQuestions", [])
 
 
   var nikoliaPin = new ScrollMagic.Scene({
-    triggerElement: '#page1-wrapper',
+    triggerElement: '.page1-wrapper',
     triggerHook: 0,
     offset: 0,
     duration: 900
@@ -107,7 +107,6 @@ angular.module("threeQuestions", [])
   .setPin('#page1-wrapper', {pushFollowers: true})
 
   .addTo(controller);
-
 
 ///////////Page 2 ///////////////////////////
 
