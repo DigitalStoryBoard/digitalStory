@@ -28,31 +28,31 @@ angular.module("threeQuestions", [])
   .addTo(controller);
 
 ///////page 1 For Nikolia text/////////////////////////////
-  var nikoliaFadin = new ScrollMagic.Scene({
-    triggerElement: '#page1-wrapper',
-    triggerHook: 0.7,
-    offset: 100,
-  })
-  .setTween("#page1-wrapper", {scale: 2})
-  .setClassToggle('#page1-wrapper', 'fade-in') // add class to project01
-  .addIndicators({
-    name: 'fade scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
-  .addTo(controller);
-
-
-  var nikoliaPin = new ScrollMagic.Scene({
-    triggerElement: '#page1-wrapper',
-    triggerHook: 0,
-    offset: 0,
-    duration: 900
-  })
-  .setPin('#page1-wrapper', {pushFollowers: true})
-
-  .addTo(controller);
+  // var nikoliaFadin = new ScrollMagic.Scene({
+  //   triggerElement: '.page1-wrapper',
+  //   triggerHook: 0.7,
+  //   offset: 100,
+  // })
+  // .setTween(".page1-wrapper", {scale: 2})
+  // .setClassToggle('.page1-wrapper', 'fade-in') // add class to project01
+  // .addIndicators({
+  //   name: 'fade scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
+  // .addTo(controller);
+  //
+  //
+  // var nikoliaPin = new ScrollMagic.Scene({
+  //   triggerElement: '.page1-wrapper',
+  //   triggerHook: 0,
+  //   offset: 0,
+  //   duration: 900
+  // })
+  // .setPin('#page1-wrapper', {pushFollowers: true})
+  //
+  // .addTo(controller);
 
 
 ///////////Page 2 ///////////////////////////
