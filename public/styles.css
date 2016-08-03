@@ -1,10 +1,21 @@
+
+
+
+
 body {
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .cover-wrapper {
-  opacity: 1;
+  opacity: 0;
   transition: all 3s ease-out;
+}
+
+.cover-wrapper.fade-in {
+  opacity: 1;
+  /*transition: all 3s ease-out;*/
 }
 
 .cover-wrapper.fade-out {
@@ -12,11 +23,81 @@ body {
   /*transition: all 3s ease-out;*/
 }
 
+.cover-bg {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: url(./images/cover/cover-bg.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.cover-title {
+  opacity: 1;
+  font-size: 90px;
+  color: darkred;
+  top: 90px;
+  right: 320px;
+  position: absolute;
+
+}
+
+.cover-title2 {
+  font-size: 20px;
+  color: darkred;
+  top: 250px;
+  right: 320px;
+  position: absolute;
+
+}
+
+.cover-title3 {
+  opacity: 1;
+  font-size: 18px;
+  color: darkred;
+  top: 273px;
+  right: 310px;
+  position: absolute;
+
+}
+
+
+.cover-boy {
+  top: 290px;
+  right: 480px;
+  position: absolute;
+
+
+}
+
+.cover-bird {
+  opacity: 1;
+  top: 0px;
+  right: 680px;
+  position: absolute;
+}
+
+
+
+.cover-monkey {
+  top: -47px;
+  right: 280px;
+  position: absolute;
+}
+
+.cover-dog {
+  top: 450px;
+  right: 180px;
+  position: absolute;
+}
+
 #page1-wrapper {
     padding: 200px;
     opacity: 0;
     /*transform: translateY(50px);*/
-    transition: all 3s ease-out;
+    /*transition: all 3s ease-out;*/
 }
 #page1-wrapper.fade-in {
     opacity: 1;
