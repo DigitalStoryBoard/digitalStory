@@ -1,5 +1,14 @@
 
 
+
+canvas {
+	width: 100%;
+	height: 100%;
+	color: #5048FF;
+}
+
+
+
 body {
   text-align: center;
   padding: 0;
@@ -247,3 +256,4 @@ body {
     background-color: #fff;
     padding: 200px;
 }*/
+
