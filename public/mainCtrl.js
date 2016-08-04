@@ -1,6 +1,6 @@
 angular.module('threeQuestions').controller('mainCtrl', function($scope, mainServ){
 
-    $scope.comments = ["comment 1", "comment 1", "comment 1", "comment 1", "comment 1", "comment 1", "comment 1"];
+
 
 var scene, camera, renderer;
 var geometry, material, mesh, cube, spotLight, particleSystem, particleCount, particle, particles;
