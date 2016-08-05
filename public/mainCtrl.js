@@ -35,9 +35,7 @@ function init() {
     camera.position.z = 400;
     camera.lookAt (scene.position);
 
-    controls = new THREE.FirstPersonControls( camera );
-                controls.movementSpeed = 150;
-                controls.lookSpeed = 0.1;
+    
 
     var planeGeometry = new THREE.PlaneGeometry(window.innerWidth, window.innerHeight);
     var planeMaterial = new THREE.MeshBasicMaterial({color:0xffffff,
