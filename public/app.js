@@ -183,7 +183,7 @@ tl.add( TweenMax.to(".page2-monkey", 12, {opacity: 1}, '-=5'))
 tl.add( TweenMax.to(".page2-dog", 12, {opacity: 1}, '-=5'))
 tl.add( TweenMax.to(".page2-bird", 12, {opacity: 1}, '-=5'))
 
-tl.add( TweenMax.to(".page2-text3", 22, {opacity: 1}))
+tl.add( TweenMax.to(".page2-text3", 22, {opacity: 1, delay: 1}))
 tl.add( TweenMax.to(".page2-text3", 12, {opacity: 0}))
 tl.add( TweenMax.to(".page2-text4", 22, {opacity: 1}))
 tl.add( TweenMax.to(".page2-text4", 12, {opacity: 0}))
