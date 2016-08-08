@@ -6,6 +6,12 @@ angular.module("threeQuestions", [])
     controller: "landingCtrl"
   }
 })
+.directive('render1',function(){
+  return {
+    templateUrl: 'render1.html',
+    controller: 'render1Control'
+  }
+})
 .controller("landingCtrl", function(){
 
   var flightpath = {
@@ -24,19 +30,17 @@ angular.module("threeQuestions", [])
   var coverFadeIn = new ScrollMagic.Scene({
     triggerElement: '.cover-wrapper',
     triggerHook: 1,
-    offset: 600,
+    offset: 600
 
   })
-
   .setClassToggle('.cover-wrapper', 'fade-in') // add class to project01
   .addTo(controller);
 
   var coverFadeOut = new ScrollMagic.Scene({
     triggerElement: '.cover-wrapper',
     triggerHook: .5,
-    offset: 700,
+    offset: 700
   })
-
   .setClassToggle('.cover-wrapper', 'fade-out') // add class to project01
   .addIndicators({
     name: 'cover scene',
@@ -81,14 +85,12 @@ angular.module("threeQuestions", [])
   .addTo(controller);
 
 
-
-
 ///////page 1 For Nikolia text/////////////////////////////
   var nikoliaFadinBg = new ScrollMagic.Scene({
     triggerElement: '.page1-bg',
     triggerHook: 0.7,
     offset: 100,
-    duration: 300,
+    duration: 300
   })
   .setTween(".page1-bg", {delay: 1.5, opacity: 1})
   .addIndicators({
@@ -103,7 +105,7 @@ angular.module("threeQuestions", [])
     triggerElement: '.page1-nikText',
     triggerHook: 0.7,
     offset: 0,
-    duration: 1200,
+    duration: 1200
   })
   .setTween(".page1-nikText", {opacity: 1, scale: 2})
   .addIndicators({
@@ -121,14 +123,13 @@ angular.module("threeQuestions", [])
     duration: 500
   })
   .setPin('.page1-bg', {pushFollowers: true})
-
   .addTo(controller);
 
   var nikoliaFadinBg = new ScrollMagic.Scene({
     triggerElement: '.page1-bg',
     triggerHook: 0.7,
     offset: 800,
-    duration: 800,
+    duration: 800
   })
   .setTween(".page1-bg", {delay: 1.5, opacity: 0})
   .setClassToggle('.page1-bg', 'fade-in') // add class to project01
@@ -143,7 +144,6 @@ angular.module("threeQuestions", [])
 
 ///////////Page 2 ///////////////////////////
 
-
 var page2PinBg = new ScrollMagic.Scene({
   triggerElement: '.page2-bg',
   triggerHook: 0,
@@ -157,7 +157,7 @@ var page2FadinBg = new ScrollMagic.Scene({
   triggerElement: '.page2-bg',
   triggerHook: 0.7,
   offset: 100,
-  duration: 1000,
+  duration: 1000
 })
 .setTween(".page2-bg", 7, {delay: 2.2, opacity: 1})
 .addIndicators({
@@ -167,8 +167,6 @@ var page2FadinBg = new ScrollMagic.Scene({
   colorEnd: 'pink'
 })
 .addTo(controller);
-
-
 
 var tl = new TimelineMax({});
 tl.add( TweenMax.to(".page2-boy", 22, {opacity: 1,}))
@@ -202,7 +200,7 @@ var page2FadinBoy = new ScrollMagic.Scene({
   triggerElement: ".page2-bg",
   duration: 3000,
   triggerHook: 0.5,
-  offset: 700,
+  offset: 700
 })
 
 .addIndicators({
@@ -236,13 +234,14 @@ var tl2 = new TimelineMax({});
     tl2.add( TweenMax.to(".page3-kite2", 1, {opacity: 1}))
     tl2.add(TweenMax.to(".page3-kite2", 4, {css:{bezier:flightpath.entry}, ease:Power1.easeInOut, delay: 38}))
     tl2.add(TweenMax.to(".page3-kite2", 5, {css:{bezier:flightpath.looping}, ease:Power1.easeInOut}))
-    tl2.add(TweenMax.to(".page3-kite2", 1, {css:{bezier:flightpath.leave}, ease:Power1.easeInOut}));
+    tl2.add(TweenMax.to(".page3-kite2", 1, {css:{bezier:flightpath.leave}, ease:Power1.easeInOut}))
     tl2.add( TweenMax.to(".page3-kite2", .5, {opacity: 0, delay: 0}));
+
 var page2kite2 = new ScrollMagic.Scene({
   triggerElement: ".page2-bg",
   duration: 3470,
   triggerHook: 0.5,
-  offset: 700,
+  offset: 700
 })
 
 .addIndicators({
@@ -267,7 +266,7 @@ var page2kite2 = new ScrollMagic.Scene({
   triggerElement: ".page3-kite",
   duration: 3650,
   triggerHook: 0.5,
-  offset: -150,
+  offset: -150
 })
 
 .addIndicators({
@@ -304,7 +303,7 @@ var tl4 = new TimelineMax({});
       triggerElement: ".page3-bg",
       duration: 2000,
       triggerHook: 0.5,
-      offset: 700,
+      offset: 700
     })
 
     .addIndicators({
@@ -348,7 +347,7 @@ var tl4 = new TimelineMax({});
           triggerElement: ".page4-bg",
           duration: 6000,
           triggerHook: 0.5,
-          offset: 50,
+          offset: 50
         })
         // .setClassToggle('.page2-boy', 'fade-in') // add class to project01
         .addIndicators({
@@ -385,7 +384,7 @@ var tl6 = new TimelineMax({});
       triggerElement: ".page5-bg",
       duration: 2900,
       triggerHook: 0.5,
-      offset: 50,
+      offset: 50
     })
     // .setClassToggle('.page2-boy', 'fade-in') // add class to project01
     .addIndicators({
@@ -427,7 +426,7 @@ var tl6 = new TimelineMax({});
           triggerElement: ".page6-bg",
           duration: 3000,
           triggerHook: 0.5,
-          offset: 50,
+          offset: 50
         })
         // .setClassToggle('.page2-boy', 'fade-in') // add class to project01
         .addIndicators({
