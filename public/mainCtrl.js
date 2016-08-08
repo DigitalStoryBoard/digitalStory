@@ -4,8 +4,9 @@ angular.module('threeQuestions').controller('mainCtrl', function($scope, mainSer
 var i = 0;
 var runcode = setInterval(function (){
     i++;
-    if(window.document.body.scrollTop > 2000){
-        console.log("greater than 2000")
+    console.log(window.document.body.scrollTop);  // This gives us the position of the scroll in order to render Three.js
+    if(window.document.body.scrollTop > 5400){
+        console.log("greater than 2000");
         init();
         animate();
         stop();
@@ -19,8 +20,6 @@ var stop = function(){
 
 var scene, camera, renderer, controls;
 var geometry, material, mesh, cube, spotLight, particleSystem, particleCount, particle, particles;
-var debouncer;
-var standStill = true;
 var loader = new THREE.TextureLoader();
 
 
@@ -46,14 +45,19 @@ function init() {
     	map: THREE.ImageUtils.loadTexture('images/page19/page19.png'),
       	transparent: false
 });
+    var planeMaterial3 = new THREE.MeshBasicMaterial({color:0xffffff,
+        map: THREE.ImageUtils.loadTexture('images/page12/page12.png'),
+        transparent: false
+});
+
+
     var plane =  new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.rotation.y = 0.09 *Math.PI;
+    plane.rotation.y = 0.03 *Math.PI;     //plane tilt
     plane.receiveShadow = false;
     scene.add(plane);							
 
     var plane2 =  new THREE.Mesh(planeGeometry, planeMaterial2);
-    plane2.rotation.y = -0.09 * Math.PI;
-    // plane2.position.x = 500;
+    plane2.rotation.y = -0.03 * Math.PI;  //plane tilt
     plane2.position.z = 900;
     plane2.receiveShadow = false;
     scene.add(plane2);
@@ -70,7 +74,7 @@ function init() {
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
-    renderer.setClearColor(0xABABAB);
+    renderer.setClearColor(0xffffff);
     renderer.shadowMap.enabled = true;
     renderer.shadowMapHard = true;
     document.getElementById("threerain").appendChild( renderer.domElement );
@@ -113,7 +117,7 @@ function init() {
  //************************* Particle set up for Leaves **********************
     //*************************************************************************
 
-    leafCount = 2;
+    leafCount = 20;
     leaves = new THREE.Geometry()
     var leafMaterial = new THREE.PointsMaterial({
         color: 0xffffff,
@@ -165,7 +169,7 @@ function animate() {
     		particleSystem.position.x = 200;
     	}  	
     	particleSystem.geometry.verticesNeedUpdate = true;
-        leafSystem.position.y += 0.05;
+        //leafSystem.position.y += 0.05;
         leafSystem.position.z += 0.35;
         leafSystem.position.x -= 5.0;
         leafSystem.rotation.x -= 0.1;
