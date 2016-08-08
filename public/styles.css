@@ -1,4 +1,5 @@
 
+/*
 canvas {
 	width: 100%;
 	height: 100%;
@@ -6,7 +7,7 @@ canvas {
 }
 #threerain{
   background-color: #858585;
-}
+}*/
 
 body {
   text-align: center;
@@ -34,7 +35,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: url(./images/cover/cover-bg.png) no-repeat center center;
+  background: url(./images/cover/cover-bg2.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -124,6 +125,7 @@ body {
 
 
 .page1-nikText {
+    font-size: 16px;
     color: darkblue;
     top: 1200px;
     left: 500px;
@@ -151,16 +153,9 @@ body {
     position: absolute;
 }
 
-.page2-kite{
-    top: -80px;
-    left: 300px;
-    opacity: 1;
-    position: absolute;
-}
-
 
 .page2-text{
-  font-size: 20px;
+  font-size: 16px;
   width: 400px;
     top: 800px;
     left: 810px;
@@ -169,7 +164,7 @@ body {
 }
 
 .page2-text2{
-  font-size: 20px;
+  font-size: 16px;
   width: 400px;
     top: 800px;
     left: 810px;
@@ -178,7 +173,7 @@ body {
 }
 
 .page2-text3{
-  font-size: 20px;
+  font-size: 16px;
   width: 400px;
     top: 800px;
     left: 810px;
@@ -187,7 +182,7 @@ body {
 }
 
 .page2-text4{
-  font-size: 20px;
+  font-size: 16px;
   width: 400px;
     top: 800px;
     left: 810px;
@@ -197,7 +192,7 @@ body {
 
 
 .page2-text5{
-  font-size: 20px;
+  font-size: 16px;
   width: 400px;
     top: 800px;
     left: 810px;
@@ -206,7 +201,7 @@ body {
 }
 
 .page2-text6{
-  font-size: 20px;
+  font-size: 16px;
   width: 400px;
     top: 800px;
     left: 810px;
@@ -235,116 +230,206 @@ body {
     position: absolute;
 }
 
-/*.page3-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
-}
-.page4-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
-}
-.page5-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
-}
-.page6-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
-}
-.page7-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
-}
-.page8-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
-}
-.page9-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
-}
-.page10-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
-}
-.page11-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
-}
-.page12-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
-    opacity: 0;
-    transition: all 3s ease-out;
+.page3-wrapper {
+    position: relative;
+
 }
 
-.page13-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
+
+.page3-bg{
+    position: relative;
+    opacity: 1;
+    top: 440px;
 }
-.page14-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
+
+
+.page3-kite2{
+  z-index: 1;
+    top: 405px;
+    left: 1030px;
+    opacity: 0;
+    position: absolute;
 }
-.page15-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
+
+.page3-kite{
+    top: -20px;
+    left: 180px;
+    opacity: 0;
+    position: absolute;
 }
-.page16-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
+
+
+
+
+.page3-text{
+  font-size: 20px;
+  width: 400px;
+    top: 130px;
+    left: 110px;
+    opacity: 0;
+    position: absolute;
 }
-.page17-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
+
+.page3-text2{
+  font-size: 20px;
+  width: 400px;
+    top: 350px;
+    left: 510px;
+    opacity: 0;
+    position: absolute;
 }
-.page18-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
+
+.page3-text3{
+  font-size: 20px;
+  width: 400px;
+    top: 600px;
+    left: 950px;
+    opacity: 0;
+    position: absolute;
 }
-.page19-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
+
+.page4-wrapper {
+    padding-top: 100px;
+    position: relative;
 }
-.page20-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
+
+.page4-bg{
+    left: 0px;
+    position: relative;
+    opacity: 1;
+    top: 340px;
 }
-.page21-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
+
+.page4-pane1 {
+  position: absolute;
+  opacity: 0;
+  left: 220px;
+  top: 500px;
 }
-.page22-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
+
+.page4-text{
+  font-size: 12px;
+  width: 281px;
+    top: 140px;
+    left: 240px;
+    opacity: 0;
+    position: absolute;
 }
-.page23-wrapper {
-    color: #fff;
-    background-color: #000;
-    padding: 200px;
+
+.page4-pane2 {
+  position: absolute;
+  left: 535px;
+  opacity: 0;
+  top: -500px;
 }
-.page24-wrapper {
-    color: #000;
-    background-color: #fff;
-    padding: 200px;
-}*/
+
+.page4-text2{
+    font-size: 12px;
+    width: 285px;
+    top: 260px;
+    left: 600px;
+    opacity: 0;
+    position: absolute;
+}
+
+.page4-pane3 {
+  position: absolute;
+  left: 940px;
+  opacity: 0;
+  top: 500px;
+}
+
+.page4-text3{
+  font-size: 12px;
+  width: 285px;
+    top: 500px;
+    left: 965px;
+    opacity: 0;
+    position: absolute;
+}
+
+.page4-pane2-coconut {
+  top:  -150px;
+  left: 700px;
+  position: absolute;
+  opacity: 0;
+}
+
+.page5-wrapper {
+    padding-top: 50px;
+    position: relative;
+}
+
+.page5-bg {
+  top: 1200px;
+  opacity: 0;
+}
+
+.page5-text{
+  font-size: 12px;
+  width: 400px;
+    top: 140px;
+    left: 500px;
+    opacity: 0;
+    position: absolute;
+}
+
+.page6-wrapper {
+    padding-top: 100px;
+    position: relative;
+}
+
+.page6-bg{
+    position: relative;
+    opacity: 1;
+    top: 690px;
+    left: 10px;
+}
+
+.page6-pane1 {
+  position: absolute;
+  opacity: 0;
+  left: -235px;
+  top: -470px;
+}
+
+.page6-text{
+  font-size: 12px;
+  width: 281px;
+    top: 145px;
+    left: 280px;
+    opacity: 0;
+    position: absolute;
+}
+
+.page6-pane2 {
+  position: absolute;
+  left: 375px;
+  opacity: 0;
+  top: 55px;
+}
+
+.page6-text2{
+    font-size: 12px;
+    width: 285px;
+    top: -300px;
+    left: 620px;
+    opacity: 0;
+    position: absolute;
+}
+
+.page6-pane3 {
+  position: absolute;
+  left: 1440px;
+  opacity: 0;
+  top: -451px;
+}
+
+.page6-text3{
+  font-size: 12px;
+  width: 285px;
+    top: 100px;
+    left: 960px;
+    opacity: 0;
+    position: absolute;
+}

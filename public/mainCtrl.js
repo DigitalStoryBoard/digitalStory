@@ -1,6 +1,7 @@
 angular.module('threeQuestions').controller('mainCtrl', function($scope, mainServ){
 
 
+
 var i = 0;
 var runcode = setInterval(function (){
     i++;
@@ -180,4 +181,5 @@ function animate() {
         }    
         renderer.render(scene, camera)
      };
+
 });
