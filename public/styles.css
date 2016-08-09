@@ -15,7 +15,6 @@ body {
   margin: 0;
 }
 
-
 .cover-wrapper {
     opacity: 0;
    transition: all 3s ease-out;
@@ -32,14 +31,23 @@ body {
 }
 
 .cover-bg {
-  height: 100vh;
-  width: 100vw;
+  height: 730px;
+  width: 1600px;
+  left: 360px;
   overflow: hidden;
   background: url(./images/cover/cover-bg2.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.titleElements {
+  width: 1080px;
+  height: 720px;
+  top: 5px;
+  left: 360px;
+  position: absolute;
 }
 
 .cover-title {
@@ -71,13 +79,10 @@ body {
 
 }
 
-
 .cover-boy {
   top: 290px;
   right: 480px;
   position: absolute;
-
-
 }
 
 .cover-bird {
@@ -86,8 +91,6 @@ body {
   right: 680px;
   position: absolute;
 }
-
-
 
 .cover-monkey {
   top: -47px;
@@ -100,11 +103,10 @@ body {
   right: 180px;
   position: absolute;
 }
-/*
-.page1-wrapper {
-    position: absolute;;
-    padding: 200px;
-}*/
+
+
+
+
 
 .page1-bg {
   height: 100vh;
@@ -122,17 +124,17 @@ body {
     transition: all 2s ease-out;
 }
 
-
-
 .page1-nikText {
     font-size: 16px;
-    color: darkblue;
+    color: black;
     top: 1200px;
     left: 500px;
     padding: 200px;
     opacity: 0;
     position: absolute;
 }
+
+
 
 
 .page2-wrapper {
@@ -152,7 +154,6 @@ body {
     opacity: 0;
     position: absolute;
 }
-
 
 .page2-text{
   font-size: 16px;
@@ -189,7 +190,6 @@ body {
     opacity: 0;
     position: absolute;
 }
-
 
 .page2-text5{
   font-size: 16px;
@@ -230,11 +230,13 @@ body {
     position: absolute;
 }
 
+
+
+
 .page3-wrapper {
     position: relative;
 
 }
-
 
 .page3-bg{
     position: relative;
@@ -244,8 +246,8 @@ body {
 
 
 .page3-kite2{
-  z-index: 1;
-    top: 405px;
+    z-index: 1;
+    top: 55px;
     left: 1030px;
     opacity: 0;
     position: absolute;
@@ -257,9 +259,6 @@ body {
     opacity: 0;
     position: absolute;
 }
-
-
-
 
 .page3-text{
   font-size: 20px;
@@ -287,6 +286,9 @@ body {
     opacity: 0;
     position: absolute;
 }
+
+
+
 
 .page4-wrapper {
     padding-top: 100px;
@@ -355,6 +357,9 @@ body {
   opacity: 0;
 }
 
+
+
+
 .page5-wrapper {
     padding-top: 50px;
     position: relative;
@@ -374,15 +379,18 @@ body {
     position: absolute;
 }
 
+
+
+
 .page6-wrapper {
-    padding-top: 100px;
+    padding-top: 0px;
     position: relative;
 }
 
 .page6-bg{
     position: relative;
     opacity: 1;
-    top: 690px;
+    top: 590px;
     left: 10px;
 }
 
@@ -430,6 +438,241 @@ body {
   width: 285px;
     top: 100px;
     left: 960px;
+    opacity: 0;
+    position: absolute;
+}
+
+
+
+
+.page7-wrapper {
+    position: relative;
+    top: -100px;
+}
+
+.page7-bg{
+  left: 250px;
+  height: 840px;
+  width: 960px;
+  overflow: hidden;
+    position: relative;
+    opacity: 0;
+    top: 0px;
+
+}
+
+.page7-animals-tree {
+  position: absolute;
+  opacity: 1;
+  left: 0px;
+  top: 0px;
+}
+
+.page7-cloudsLeft {
+  position: absolute;
+  opacity: 1;
+  left: -20px;
+  top: 0px;
+}
+
+.page7-cloudsRight {
+  position: absolute;
+  opacity: 1;
+  left: 600px;
+  top: 50px;
+}
+
+.page7-cloudsMiddle {
+  position: absolute;
+  opacity: 1;
+  left: -20px;
+  top: 50px;
+}
+
+.page7-bird {
+  position: absolute;
+  opacity: 1;
+  left: 250px;
+  top: 150px;
+}
+
+.page7-text{
+  font-size: 12px;
+  width: 581px;
+    top: 345px;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+}
+
+
+
+
+.page8-wrapper {
+    position: relative;
+    top: -2500px;
+}
+
+.page8-bg{
+  left: 250px;
+  height: 840px;
+  width: 960px;
+  overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    top: 0px;
+}
+
+.page8-sea-kid {
+  position: absolute;
+  opacity: 1;
+  left: 0px;
+  top: 600px;
+}
+
+.page8-cloudsLeft {
+  position: absolute;
+  opacity: 1;
+  left: 0px;
+  top: 0px;
+}
+
+.page8-cloudsRight {
+  position: absolute;
+  opacity: 1;
+  left: 500px;
+  top: 50px;
+}
+
+.page8-cloudsMiddle {
+  position: absolute;
+  opacity: 1;
+  left: 0px;
+  top: 50px;
+}
+
+.page8-bird {
+  position: absolute;
+  opacity: 1;
+  left: 250px;
+  top: 150px;
+}
+
+.page8-text{
+  font-size: 12px;
+  width: 581px;
+    top: 245px;
+    left: 100px;
+    opacity: 0;
+    position: absolute;
+}
+
+
+
+
+.page9-wrapper {
+    position: relative;
+    top: 2300px;
+}
+
+.page9-bg{
+  left: 250px;
+  height: 840px;
+  width: 960px;
+  overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    top: 0px;
+
+}
+
+.page9-clouds {
+  position: absolute;
+  opacity: 0;
+  left: 0px;
+  top: 50px;
+}
+
+.page9-trees {
+  position: absolute;
+  opacity: 1;
+  left: 250px;
+  top: 350px;
+}
+
+.page9-nikolia {
+  position: absolute;
+  opacity: 1;
+  left: 100px;
+  top: 480px;
+
+}
+
+.page9-text{
+  font-size: 12px;
+  width: 581px;
+    top: 245px;
+    left: 100px;
+    opacity: 0;
+    position: absolute;
+}
+
+
+
+
+
+.page10-wrapper {
+    position: relative;
+    top: 6500px;
+}
+
+.page10-bg{
+  left: 250px;
+  height: 840px;
+  width: 960px;
+  overflow: hidden;
+    position: absolute;
+    opacity: 0;
+    top: 0px;
+
+}
+
+.page10-boy {
+  position: absolute;
+  opacity: 0;
+  left: 0px;
+  top: 800px;
+}
+
+.page10-turtle {
+  position: absolute;
+  opacity: 1;
+  left: 250px;
+  top: 800px;
+}
+
+.page10-nikolia {
+  position: absolute;
+  opacity: 0;
+  left: 100px;
+  top: 680px;
+
+}
+
+.page10-text{
+  font-size: 12px;
+  width: 581px;
+    top: 845px;
+    left: 100px;
+    opacity: 1;
+    position: absolute;
+}
+
+.page10-text2{
+  font-size: 12px;
+  width: 581px;
+    top: 700px;
+    left: 100px;
     opacity: 0;
     position: absolute;
 }
