@@ -435,6 +435,11 @@ body {
     opacity: 0;
     position: absolute;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 
 
 
@@ -667,6 +672,7 @@ body {
     left: 100px;
     opacity: 0;
     position: absolute;
+
   }
 
   .page12-wrapper {
@@ -683,7 +689,6 @@ body {
       top: 0px;
   }
 
-
 .bs {
   height: 100vh;
   width: 100vw;
@@ -691,4 +696,5 @@ body {
 .bs2 {
   height: 100vh;
   width: 100vw;
+
 }
