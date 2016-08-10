@@ -1,5 +1,5 @@
 angular.module('threeQuestions').controller('render1Control', function(){
-	var scene, camera, renderer, controls, geometry, material, mesh, cube, spotLight, particleSystem, particleCount, particle,particles, plane1, plane2, plane3, stop, backgroundCube;
+	var scene, camera, renderer, controls, geometry, material, mesh, cube, spotLight, particleSystem, particleCount, particle,particles, plane1, plane2, plane3, stop, backgroundCube, backgroundMaterial;
 	var count = 0;
 
 	var resetRender = function(){
@@ -9,7 +9,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	   var runCode = setInterval(function (){
 	   count++;
 	   console.log("scroll is " + window.document.body.scrollTop);// This gives us the position of the scroll in order to render Three.js
-	   if(window.document.body.scrollTop > 41165) {
+	   if(window.document.body.scrollTop > 39000) {
 	        console.log("greater than 40000");
 	        init();
 	        animate();
@@ -30,8 +30,17 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    camera.position.z = 0;
 	    camera.lookAt (scene.position);
 
+	    var cubeGeometry = new THREE.BoxGeometry(1000,1000,1000);
+
+	    var backgroundMaterial = new THREE.MeshBasicMaterial({
+	    	color: 0xffffff,
+	    	map: THREE.ImageUtils.loadTexture('images/page1/page1-bg.png'),
+	    	transparent: false
+	    });
+
+	    backgroundCube = new THREE.Mesh(cubeGeometry, backgroundMaterial);
+
 	    var planeGeometry = new THREE.PlaneGeometry(window.innerWidth, window.innerHeight);
-	    //var cubeGeometry = new THREE.BoxGeometry(1000,1000,1000);
 
 	    var planeMaterial2 = new THREE.MeshBasicMaterial({
 	    	color:0xffffff,
@@ -72,7 +81,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    plane1.receiveShadow = false;
 	    scene.add(plane1);
 
-	    //backgroundCube = new THREE.Mesh(cubeGeometry, backgroundMateral);
+	    
 
 
 	 	spotLight = new THREE.SpotLight(0xffffff);
