@@ -6,6 +6,12 @@ angular.module("threeQuestions", [])
     controller: "landingCtrl"
   }
 })
+.directive('render1',function(){
+  return {
+    templateUrl: 'render1.html',
+    controller: 'render1Control'
+  }
+})
 .controller("landingCtrl", function(){
 
   var flightpath = {
@@ -83,7 +89,6 @@ angular.module("threeQuestions", [])
   .addTo(controller);
 
 
-
 ///////page 1 For Nikolia text/////////////////////////////
 
   var nikoliaFadinBg = new ScrollMagic.Scene({
@@ -158,20 +163,20 @@ angular.module("threeQuestions", [])
   .addTo(controller);
 
 
-  var page2FadinBg = new ScrollMagic.Scene({
-    triggerElement: '.page2-bg',
-    triggerHook: 0.7,
-    offset: 100,
-    duration: 1000
-  })
-  .setTween(".page2-bg", 7, {delay: 2.2, opacity: 1})
-  .addIndicators({
-    name: 'fade page2Bg scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
-  .addTo(controller);
+var page2FadinBg = new ScrollMagic.Scene({
+  triggerElement: '.page2-bg',
+  triggerHook: 0.7,
+  offset: 100,
+  duration: 1000
+})
+.setTween(".page2-bg", 7, {delay: 2.2, opacity: 1})
+.addIndicators({
+  name: 'fade page2Bg scene',
+  colorTrigger: 'black',
+  colorStart: '#75C695',
+  colorEnd: 'pink'
+})
+.addTo(controller);
 
 
   var tl = new TimelineMax({});
@@ -695,7 +700,5 @@ angular.module("threeQuestions", [])
   })
   .addTo(controller)
   .setTween(".page10-bg", 1, {opacity: 0, delay: 4});
-
-
 
 });
