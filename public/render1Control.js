@@ -1,78 +1,84 @@
 angular.module('threeQuestions').controller('render1Control', function(){
-
+	var scene, camera, renderer, controls, geometry, material, mesh, cube, spotLight, particleSystem, particleCount, particle,particles, plane1, plane2, plane3, stop;
 	var count = 0;
-	var runcode = setInterval(function (){
+
+	var resetRender = function(){
+		// need code to arrest the render
+		};
+	
+	   var runCode = setInterval(function (){
 	   count++;
-	   console.log(window.document.body.scrollTop);// This gives us the position of the scroll in order to render Three.js
-	   if(window.document.body.scrollTop > 21020) {
-	        console.log("greater than 2000");
+	   //console.log("scroll is" + window.document.body.scrollTop);// This gives us the position of the scroll in order to render Three.js
+	   if(window.document.body.scrollTop > 20020) {
+	        console.log("greater than 20000");
 	        init();
 	        animate();
 	        stop();
 	    }
 	}, 1000);
 
-	var stop = function(){
+	stop = function(){
 	    console.log("stopping");
-	    clearInterval(runcode);
+	    clearInterval(runCode);
 	};
 
-	var scene, camera, renderer, controls, geometry, material, mesh, cube, spotLight, particleSystem, particleCount, particle, particles;
-
 	var init = function() {
-
 		scene = new THREE.Scene();
 	    camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 1, 1000 );
 	    camera.position.x = 0;
 	    camera.position.y = 0;
-	    camera.position.z = 400;
+	    camera.position.z = 0;
 	    camera.lookAt (scene.position);
 
 	    var planeGeometry = new THREE.PlaneGeometry(window.innerWidth, window.innerHeight);
 
-	    var planeMaterial = new THREE.MeshBasicMaterial({
+	    var planeMaterial2 = new THREE.MeshBasicMaterial({
 	    	color:0xffffff,
 	    	map: THREE.ImageUtils.loadTexture('images/page18/page18.png'),
 	     	transparent: false
 		});
 
-	    var planeMaterial2 = new THREE.MeshBasicMaterial({
+	    var planeMaterial3 = new THREE.MeshBasicMaterial({
 	    	color:0xffffff,
 	    	map: THREE.ImageUtils.loadTexture('images/page19/page19.png'),
 	      	transparent: false
 		});
 
-	    var planeMaterial3 = new THREE.MeshBasicMaterial({
+	    var planeMaterial1 = new THREE.MeshBasicMaterial({
 	    	color:0xffffff,
 	        map: THREE.ImageUtils.loadTexture('images/page12/page12.png'),
 	        transparent: false
 		});
 
-	    var plane =  new THREE.Mesh(planeGeometry, planeMaterial);
-	    plane.rotation.y = 0.03 *Math.PI;//plane tilt
-	    plane.receiveShadow = false;
-	    scene.add(plane);
-
-	    var plane2 =  new THREE.Mesh(planeGeometry, planeMaterial2);
-	    plane2.rotation.y = -0.03 * Math.PI;//plane tilt
-	    plane2.position.z = 900;
+	    plane2 =  new THREE.Mesh(planeGeometry, planeMaterial2);
+	    plane2.rotation.y = 0.03 *Math.PI;//plane tilt
+	    plane2.position.x = 100;
+	    plane2.position.y = -800;
+	    plane2.position.z = 0;
 	    plane2.receiveShadow = false;
 	    scene.add(plane2);
-
-	    var plane3 =  new THREE.Mesh(planeGeometry, planeMaterial3);
-	    plane3.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane3.position.z = -900;
+	        
+	    plane3 =  new THREE.Mesh(planeGeometry, planeMaterial3);
+	    plane3.rotation.y = -0.03 * Math.PI;//plane tilt
+	    plane3.position.z = 200;
+	    plane3.position.y = 800;
 	    plane3.receiveShadow = false;
 	    scene.add(plane3);
 
-	 	var spotLight = new THREE.SpotLight(0xffffff);
+	    plane1 =  new THREE.Mesh(planeGeometry, planeMaterial1);
+	    plane1.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane1.position.z = -400;
+	    plane1.receiveShadow = false;
+	    scene.add(plane1);
+
+	 	spotLight = new THREE.SpotLight(0xffffff);
 	    spotLight.castShadow = false;
 	    spotLight.position.x = 7;
 	    spotLight.position.y = 10;
 	    spotLight.position.z = 5;
 	    // scene.add(spotLight);
 
-	    var light = new THREE.AmbientLight(0xffffff);
+	    light = new THREE.AmbientLight(0xffffff);
 	    scene.add(light);
 
 	    renderer = new THREE.WebGLRenderer();
@@ -88,7 +94,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 
 	    particleCount = 500000;
 	    particles = new THREE.Geometry();
-	    var pMaterial = new THREE.PointsMaterial({
+	    pMaterial = new THREE.PointsMaterial({
 	    	color: 0xffffff,
 	    	size: 1,
 	    	map: THREE.ImageUtils.loadTexture('images/rain2.png'),
@@ -141,7 +147,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	        leaf.velocity = new THREE.Vector3(-Math.random() * 2, -Math.random() * 5, Math.random());
 	        //add leaves to geometry
 	        leaves.vertices.push(leaf);
-	        console.log(leaf);
+	        //console.log(leaf);
 
 	    }
 
@@ -149,18 +155,34 @@ angular.module('threeQuestions').controller('render1Control', function(){
 
         leafSystem = new THREE.Points(leaves, leafMaterial);
         leafSystem.sortParticles = true;
-        console.log(leafSystem);
+        leafSystem.position.z = -400;
+        //console.log(leafSystem);
 	    //add to the scene
 	    scene.add(leafSystem);
-
+	    
 	};
+		var animate = function () {
+		
+	    
 
-	var animate = function () {
-
-	    requestAnimationFrame( animate );
-     	camera.position.z += 0.30;
+     	camera.position.z += 0.20;
+     	console.log("camera is" + camera.position.z)
     	particleSystem.position.y -= 1.0;
     	particleSystem.position.x -= 0.5;
+
+    	if(camera.position.z >= 150){
+    		plane2.position.y += 1.0;
+    	}
+    	if(plane2.position.y > -50){
+    			plane2.position.y = -50;
+
+    	}
+    	if(camera.position.z > 450){
+    		plane3.position.y -= 1.0;
+    	}
+    	if(plane3.position.y < 0){
+    		plane3.position.y = 0;
+    	}
 
     	if (particleSystem.position.y < -201){
     		particleSystem.position.y = 200;
@@ -180,8 +202,13 @@ angular.module('threeQuestions').controller('render1Control', function(){
         if(leafSystem.position.x < -5000){
             leafSystem.position.x = 700;
         }
-
-        renderer.render(scene, camera);
+       
+        if(camera.position.z < 750){
+	        renderer.render(scene, camera);
+	        requestAnimationFrame( animate );
+    	}else{
+    		resetRender();
+    	}
 	};
 
 });
