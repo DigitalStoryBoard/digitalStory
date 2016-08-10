@@ -441,6 +441,7 @@ body {
     opacity: 0;
     position: absolute;
 }
+<<<<<<< HEAD
 
 
 
@@ -675,4 +676,13 @@ body {
     left: 100px;
     opacity: 0;
     position: absolute;
+=======
+.bs {
+  height: 100vh;
+  width: 100vw;
+}
+.bs2 {
+  height: 100vh;
+  width: 100vw;
+>>>>>>> 2d496f52f7dd153ff4be01231bfa1d227e78f7f7
 }
