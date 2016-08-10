@@ -674,6 +674,11 @@ body {
     position: absolute;
   }
 
+#threerain{
+  position: relative;
+  top: 16000px;
+  }
+
   .page12-wrapper {
       position: relative;
       top: 16000px;
@@ -687,13 +692,3 @@ body {
       opacity: 1;
       top: 0px;
   }
-
-.bs {
-  height: 100vh;
-  width: 100vw;
-}
-.bs2 {
-  height: 100vh;
-  width: 100vw;
-
-}
