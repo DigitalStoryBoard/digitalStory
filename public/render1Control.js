@@ -8,9 +8,9 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	
 	   var runCode = setInterval(function (){
 	   count++;
-	   //console.log("scroll is" + window.document.body.scrollTop);// This gives us the position of the scroll in order to render Three.js
-	   if(window.document.body.scrollTop > 20020) {
-	        console.log("greater than 20000");
+	   console.log("scroll is " + window.document.body.scrollTop);// This gives us the position of the scroll in order to render Three.js
+	   if(window.document.body.scrollTop > 41165) {
+	        console.log("greater than 40000");
 	        init();
 	        animate();
 	        stop();
@@ -166,7 +166,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    
 
      	camera.position.z += 0.20;
-     	console.log("camera is" + camera.position.z)
+     	//console.log("camera is " + camera.position.z)
     	particleSystem.position.y -= 1.0;
     	particleSystem.position.x -= 0.5;
 
