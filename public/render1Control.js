@@ -1,5 +1,5 @@
 angular.module('threeQuestions').controller('render1Control', function(){
-	var scene, camera, renderer, controls, geometry, material, mesh, cube, spotLight, particleSystem, particleCount, particle,particles, plane1, plane2, plane3, stop;
+	var scene, camera, renderer, controls, geometry, material, mesh, cube, spotLight, particleSystem, particleCount, particle,particles, plane1, plane2, plane3, stop, backgroundCube;
 	var count = 0;
 
 	var resetRender = function(){
@@ -31,6 +31,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    camera.lookAt (scene.position);
 
 	    var planeGeometry = new THREE.PlaneGeometry(window.innerWidth, window.innerHeight);
+	    //var cubeGeometry = new THREE.BoxGeometry(1000,1000,1000);
 
 	    var planeMaterial2 = new THREE.MeshBasicMaterial({
 	    	color:0xffffff,
@@ -70,6 +71,9 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    plane1.position.z = -400;
 	    plane1.receiveShadow = false;
 	    scene.add(plane1);
+
+	    //backgroundCube = new THREE.Mesh(cubeGeometry, backgroundMateral);
+
 
 	 	spotLight = new THREE.SpotLight(0xffffff);
 	    spotLight.castShadow = false;
