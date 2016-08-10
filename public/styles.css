@@ -104,10 +104,6 @@ body {
   position: absolute;
 }
 
-
-
-
-
 .page1-bg {
   height: 100vh;
   width: 100vw;
@@ -133,8 +129,6 @@ body {
     opacity: 0;
     position: absolute;
 }
-
-
 
 
 .page2-wrapper {
@@ -442,7 +436,10 @@ body {
     position: absolute;
 }
 <<<<<<< HEAD
+=======
 
+
+>>>>>>> master
 
 
 
@@ -635,7 +632,6 @@ body {
     position: absolute;
     opacity: 0;
     top: 0px;
-
 }
 
 .page10-boy {
@@ -677,7 +673,24 @@ body {
     opacity: 0;
     position: absolute;
   }
+
 #threerain{
   position: relative;
   top: 16000px;
-}
+  }
+
+  .page12-wrapper {
+      position: relative;
+      top: 16000px;
+  }
+
+  .page12-bg{
+    left: 0px;
+    height:720px;
+    width: 1080px;
+      position: absolute;
+      opacity: 1;
+      top: 0px;
+  }
+
+

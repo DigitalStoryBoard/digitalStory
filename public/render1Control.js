@@ -38,10 +38,10 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    	map: THREE.ImageUtils.loadTexture('images/page18/page18.png'),
 	     	transparent: false
 		});
-
+	    
 	    var planeMaterial3 = new THREE.MeshBasicMaterial({
 	    	color:0xffffff,
-	    	map: THREE.ImageUtils.loadTexture('images/page19/page19.png'),
+	     	map: THREE.ImageUtils.loadTexture('images/page19/page19.png'),
 	      	transparent: false
 		});
 

@@ -637,7 +637,7 @@ var page2FadinBg = new ScrollMagic.Scene({
   .setTween(".page9-bg", 1, {opacity: 0, delay: 4});
 
 
-  //////////////////////page10///////////////////
+  //////////////////////page10 & 11///////////////////
 
   var page10PinBg = new ScrollMagic.Scene({
     triggerElement: '.page10-bg',
@@ -700,5 +700,22 @@ var page2FadinBg = new ScrollMagic.Scene({
   })
   .addTo(controller)
   .setTween(".page10-bg", 1, {opacity: 0, delay: 4});
+
+  //////////////////////page12///////////////////
+
+  // var page12PinBg = new ScrollMagic.Scene({
+  //   triggerElement: '.page12-bg',
+  //   triggerHook: .5,
+  //   offset: 300,
+  //   duration: 10000
+  // })
+  // .setPin('.page12-bg', {delay: 5, pushFollowers: true})
+  // .addIndicators({
+  //   name: 'pin page12wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
+  // .addTo(controller);
 
 });
