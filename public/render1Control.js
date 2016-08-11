@@ -2,13 +2,40 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	var scene, camera, renderer, controls, geometry, material, mesh, cube, spotLight, particleSystem, particleCount, particle,particles, plane1, plane2, plane3, stop, backgroundCube, backgroundMaterial;
 	var count = 0;
 
+
+	function rain (event) {
+				document.getElementById('rain').play();
+			}
+
+	function raindown(event) {
+      $('#rain').animate({volume: .5}, 3000);
+      }
+
+	function rainout(event) {
+				$('#rain').animate({volume: 0}, 5000);
+			}
+
+	function wind (event) {
+			document.getElementById('wind').play();
+		}
+
+	function windout(event) {
+			$('#wind').animate({volume: 0}, 3000);
+			}
+
+	function windin(event) {
+      $('#wind').animate({volume: 1}, 3000);
+      }
+
 	var resetRender = function(){
 		document.getElementById("threerain")
 	    	.removeChild(document.getElementById("threerain").childNodes[0]); //need code to arrest the render
-	    	//init();
-	    	//animate();
+	    	// init();
+	    	// animate();
+				rainout();
+				windout();
 		};
-	
+
 	   var runCode = setInterval(function (){
 	   count++;
 	   console.log("scroll is " + window.document.body.scrollTop);// This gives us the position of the scroll in order to render Three.js
@@ -33,6 +60,13 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    camera.position.z = 0;
 	    camera.lookAt (scene.position);
 
+			raindown();
+			rain();
+			windin();
+			wind();
+
+
+
 	    var cubeGeometry = new THREE.BoxGeometry(1000,1000,1000);
 
 	    var backgroundMaterial = new THREE.MeshBasicMaterial({
@@ -56,7 +90,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    	map: THREE.ImageUtils.loadTexture('images/page18/page18.png'),
 	     	transparent: false
 		});
-	    
+
 	    var planeMaterial3 = new THREE.MeshBasicMaterial({
 	    	color:0xffffff,
 	     	map: THREE.ImageUtils.loadTexture('images/page19/page19.png'),
@@ -154,7 +188,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    plane2.position.z = 0;
 	    plane2.receiveShadow = false;
 	    scene.add(plane2);
-	        
+
 	    plane3 =  new THREE.Mesh(planeGeometry, planeMaterial3);
 	    plane3.rotation.y = -0.03 * Math.PI;//plane tilt
 	    plane3.position.z = 200;
@@ -251,7 +285,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    plane16.position.z = 2800;
 	    plane16.position.y = -800;
 	    plane16.receiveShadow = false;
-	    scene.add(plane16); 
+	    scene.add(plane16);
 
 	 	spotLight = new THREE.SpotLight(0xffffff);
 	    spotLight.castShadow = false;
@@ -341,11 +375,11 @@ angular.module('threeQuestions').controller('render1Control', function(){
         //console.log(leafSystem);
 	    //add to the scene
 	    scene.add(leafSystem);
-	    
+
 	};
 		var animate = function () {
-		
-	    
+
+
 
      	camera.position.z += 0.20;
      	console.log("camera is " + camera.position.z)
@@ -403,7 +437,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
         if(leafSystem.position.x < -5000){
             leafSystem.position.x = 700;
         }
-       
+
         if(camera.position.z < 3750){
 	        renderer.render(scene, camera);
 	        requestAnimationFrame( animate );
