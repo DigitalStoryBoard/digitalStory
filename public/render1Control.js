@@ -178,14 +178,14 @@ angular.module('threeQuestions').controller('render1Control', function(){
 
 	    plane6 =  new THREE.Mesh(planeGeometry, planeMaterial6);
 	    plane6.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane6.position.z = 600;
-	    plane6.position.y = -800;
+	    plane6.position.z = 400;
+	    plane6.position.y = -1000;
 	    plane6.receiveShadow = false;
 	    scene.add(plane6);
 
 	    plane7 =  new THREE.Mesh(planeGeometry, planeMaterial7);
 	    plane7.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane7.position.z = 700;
+	    plane7.position.z = 600;
 	    plane7.position.y = 800;
 	    plane7.receiveShadow = false;
 	    scene.add(plane7);
@@ -206,49 +206,49 @@ angular.module('threeQuestions').controller('render1Control', function(){
 
 	    plane10 =  new THREE.Mesh(planeGeometry, planeMaterial10);
 	    plane10.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane10.position.z = 1600;
+	    plane10.position.z = 2200;
 	    plane10.position.y = -800;
 	    plane10.receiveShadow = false;
 	    scene.add(plane10);
 
 	    plane11 =  new THREE.Mesh(planeGeometry, planeMaterial11);
 	    plane11.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane11.position.z = 1800;
-	    plane11.position.y = 800;
+	    plane11.position.z = 2200;
+	    plane11.position.y = -800;
 	    plane11.receiveShadow = false;
 	    scene.add(plane11);
 
 	    plane12 =  new THREE.Mesh(planeGeometry, planeMaterial12);
 	    plane12.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane12.position.z = 2000;
+	    plane12.position.z = 2600;
 	    plane12.position.y = -800;
 	    plane12.receiveShadow = false;
 	    scene.add(plane12);
 
 	    plane13 =  new THREE.Mesh(planeGeometry, planeMaterial13);
 	    plane13.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane13.position.z = 2200;
+	    plane13.position.z = 2800;
 	    plane13.position.y = 800;
 	    plane13.receiveShadow = false;
 	    scene.add(plane13);
 
 	    plane14 =  new THREE.Mesh(planeGeometry, planeMaterial14);
 	    plane14.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane14.position.z = 2400;
+	    plane14.position.z = 3000;
 	    plane14.position.y = -800;
 	    plane14.receiveShadow = false;
 	    scene.add(plane14);
 
 	    plane15 =  new THREE.Mesh(planeGeometry, planeMaterial15);
 	    plane15.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane15.position.z = 2600;
+	    plane15.position.z = 3200;
 	    plane15.position.y = 800;
 	    plane15.receiveShadow = false;
 	    scene.add(plane15);
 
 	    plane16 =  new THREE.Mesh(planeGeometry, planeMaterial16);
 	    plane16.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane16.position.z = 2800;
+	    plane16.position.z = 3400;
 	    plane16.position.y = -800;
 	    plane16.receiveShadow = false;
 	    scene.add(plane16); 
@@ -348,7 +348,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    
 
      	camera.position.z += 0.20;
-     	console.log("camera is " + camera.position.z)
+     	//console.log("camera is " + camera.position.z)
     	particleSystem.position.y -= 1.0;
     	particleSystem.position.x -= 0.5;
 
@@ -356,6 +356,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 
     	if(camera.position.z >= 150){
     		plane2.position.y += 1.0;
+    		
     	}
     	if(plane2.position.y > -50){
     			plane2.position.y = -50;
@@ -363,16 +364,17 @@ angular.module('threeQuestions').controller('render1Control', function(){
     	}
     	if(camera.position.z > 450){
     		plane3.position.y -= 1.0;
+    		plane2.rotation.x -= 0.0001;
     	}
-    	if(plane3.position.y < 0){
+    	if(plane3.position.y < 0){// lying Panda
     		plane3.position.y = 0;
     	}
     	if(camera.position.z > 750){
-    		plane4.position.y +=0.8;
-    		plane4.position.z += 0.30;
+    		plane4.position.y +=0.8;//packing panda
+    		plane4.position.z += 0.25;
     	}
     	if(camera.position.z > 900){
-    		plane5.position.y -= .8;
+    		plane5.position.y -= .8;//panda in bed
     		plane5.position.z += 0.3;
     	}
     	if(plane5.position.y < 0){
@@ -380,9 +382,54 @@ angular.module('threeQuestions').controller('render1Control', function(){
     		plane5.position.z -= 0.20;
     	}
     	if(camera.position.z > 1000){
-    		plane6.position.y += 0.8;
+    		plane6.position.y += 0.8;//nick running
     		plane6.position.z += 0.20;
     	}
+    	if(plane6.position.y > 0){
+    		plane6.position.y = 0;
+    		plane6.position.z += 0.25;
+    	}
+    	if(plane6.position.z > 1400){  
+    		plane7.position.y -= 0.9;//baby panda in woods
+    		plane7.position.z += 0.50;
+    		plane5.position.z -= 2.0
+    	}
+    	if(plane7.position.y < 0){
+    		plane7.position.y = 0;
+    	}
+    	if(camera.position.z > 1750){
+    		plane7.position.y += 2.0;
+    		plane8.position.y += 1.5;//panda mom and baby inside
+     	}
+    	if(plane8.position.y > 0){
+    		plane8.position.y = 0;
+    		plane8.position.z += 0.8;
+    		particleSystem.position.z += 5.0;
+    		particleSystem.rotation.z += 1.0
+    	}//camera position 2000
+    	if(camera.position.z > 2000){
+     		plane8.position.y -= 3.5;
+    		plane9.position.y -=2.0;// nick and leo 
+    		plane9.position.z += 0.6;
+    	}
+    	if(plane9.position.y < 0){
+    		plane9.position.y = 0;
+    	}//camera position is 2200
+    	if(camera.position.z > 2200){
+    		plane9.position.z -= 2.0;
+    		plane10.position.y += 1.0;
+    		particleSystem.position.x -= 10.0;
+    	}
+    	if(plane10.position.y > 0){
+    		plane10.position.y = 0;// warm sun with nick and all the animals
+    		plane11.position.y += 0.3;//questions answered??
+    		plane11.position.z += 0.1;
+    	}//camera position is 2700
+    	if(plane11.position.y > 0){
+    		plane11.position.y = 0;
+    		plane11.position.z += 0.0;
+    	}
+
 
 
     	if (particleSystem.position.y < -201){
@@ -404,7 +451,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
             leafSystem.position.x = 700;
         }
        
-        if(camera.position.z < 3750){
+        if(camera.position.z < 5000){
 	        renderer.render(scene, camera);
 	        requestAnimationFrame( animate );
     	}else{
