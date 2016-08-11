@@ -254,14 +254,14 @@ angular.module('threeQuestions').controller('render1Control', function(){
 
 	    plane12 =  new THREE.Mesh(planeGeometry, planeMaterial12);
 	    plane12.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane12.position.z = 2600;
+	    plane12.position.z = 2800;
 	    plane12.position.y = -800;
 	    plane12.receiveShadow = false;
 	    scene.add(plane12);
 
 	    plane13 =  new THREE.Mesh(planeGeometry, planeMaterial13);
 	    plane13.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane13.position.z = 2800;
+	    plane13.position.z = 3000;
 	    plane13.position.y = 800;
 	    plane13.receiveShadow = false;
 	    scene.add(plane13);
@@ -382,7 +382,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 
 
      	camera.position.z += 0.20;
-     	//console.log("camera is " + camera.position.z)
+     	console.log("camera is " + camera.position.z)
     	particleSystem.position.y -= 1.0;
     	particleSystem.position.x -= 0.5;
 
@@ -408,7 +408,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
     		plane4.position.z += 0.25;
     	}
     	if(camera.position.z > 900){
-    		plane5.position.y -= .8;//panda in bed
+    		plane5.position.y -= .8;//panda in bed with turtle
     		plane5.position.z += 0.3;
     	}
     	if(plane5.position.y < 0){
@@ -439,12 +439,15 @@ angular.module('threeQuestions').controller('render1Control', function(){
     		plane8.position.y = 0;
     		plane8.position.z += 0.8;
     		particleSystem.position.z += 5.0;
-    		particleSystem.rotation.z += 1.0
+    		particleSystem.rotation.z += 1.0;
+    		rainout();
+			windout();
     	}//camera position 2000
     	if(camera.position.z > 2000){
      		plane8.position.y -= 3.5;
     		plane9.position.y -=2.0;// nick and leo 
     		plane9.position.z += 0.6;
+    		
     	}
     	if(plane9.position.y < 0){
     		plane9.position.y = 0;
@@ -452,16 +455,29 @@ angular.module('threeQuestions').controller('render1Control', function(){
     	if(camera.position.z > 2200){
     		plane9.position.z -= 2.0;
     		plane10.position.y += 1.0;
-    		particleSystem.position.x -= 10.0;
+    		particleSystem.position.z -= 10000.0;
     	}
     	if(plane10.position.y > 0){
     		plane10.position.y = 0;// warm sun with nick and all the animals
-    		plane11.position.y += 0.3;//questions answered??
+    		plane11.position.y += 0.25;//questions answered?? monkey holding dog tail
     		plane11.position.z += 0.1;
     	}//camera position is 2700
     	if(plane11.position.y > 0){
     		plane11.position.y = 0;
     		plane11.position.z += 0.0;
+    	}
+    	if(camera.position.z > 2900){
+    		plane12.position.y += 0.8;
+    	}
+    	if(plane12.position.y > 0){
+    		plane12.position.y = 0;
+    		plane12.position.z += 0.15;
+    	}//camera position 3450
+    	if(camera.position.z > 3450){
+    		plane13.position.y -= 0.5;
+    	}
+    	if(plane13.position.y < 0){
+    		plane13.position.y = 0;
     	}
 
 
