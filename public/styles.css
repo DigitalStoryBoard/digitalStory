@@ -693,10 +693,9 @@ body {
       top: 0px;
   }
 
-  .page13-wrapper {
-      position: relative;
-      height:720px;
-      width: 1080px;
-      top: 17580px;
-      opacity: 1;
-  }
+comments {
+  position: relative;
+  height:720px;
+  width: 1080px;
+  top: 16080px;
+}
