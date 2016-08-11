@@ -1,0 +1,47 @@
+<div class="ui page grid">
+			<div class="column">
+				<h1 class="ui header align cetner">Comment on this story</h1>
+				<div class="ui segment">
+					<h2 class="ui header">Comments</h2>
+					<div class="ui divided list" data-ng-cloak>
+						<div class="item" data-ng-repeat="comment in comments" >
+							<img class="ui avatar image" data-ng-src="http://www.gravatar.com/avatar/{{comment.avatar}}">
+							<div class="content">
+								<a class="header">{{comment.username}}</a>
+								<div class="description">{{comment.text}}</div>
+							</div>
+						</div>
+					</div>
+					<form class="ui form" novalidate data-ng-submit="addComment(cmt)" name="commentForm">
+						<div class="two fields">
+							<div class="required field">
+								<label>Name</label>
+								<div class="ui icon input">
+									<input type="text" placeholder="Name" name="username" data-ng-model="cmt.username" required>
+									<i class="user icon"></i>
+								</div>
+							</div>
+							<div class="field"></div>
+						</div>
+						<div class="two fields">
+							<div class="required field">
+								<label>Email</label>
+								<div class="ui icon input">
+									<input type="email" name="email" data-ng-model="cmt.email" required placeholder="Email">
+									<i class="lock icon"></i>
+								</div>
+							</div>
+							<div class="field"></div>
+						</div>
+						<div class="two fields">
+							<div class="required field">
+								<label>Comment</label>
+								<textarea name="text" data-ng-model="cmt.text" required></textarea>
+							</div>
+							<div class="field"></div>
+						</div>
+						<button type="submit" class="ui submit green button" data-ng-disabled="commentForm.$invalid">Submit</submit>
+					</form>
+				</div>
+			</div>
+		</div>
