@@ -9,6 +9,11 @@ canvas {
   background-color: #858585;
 }*/
 
+h3 {
+  font-family: times;
+  font-size: 18.72px;
+}
+
 body {
   text-align: center;
   padding: 0;
@@ -45,25 +50,27 @@ body {
 .titleElements {
   width: 1080px;
   height: 720px;
-  top: 5px;
+  top: 10px;
   left: 360px;
   position: absolute;
 }
 
 .cover-title {
+  font-family: times;
   opacity: 1;
   font-size: 90px;
   color: darkred;
-  top: 90px;
+  top: 180px;
   right: 320px;
   position: absolute;
 
 }
 
 .cover-title2 {
+  font-family: times;
   font-size: 20px;
   color: darkred;
-  top: 250px;
+  top: 270px;
   right: 320px;
   position: absolute;
 
@@ -73,7 +80,7 @@ body {
   opacity: 1;
   font-size: 18px;
   color: darkred;
-  top: 273px;
+  top: 293px;
   right: 310px;
   position: absolute;
 
@@ -338,7 +345,7 @@ body {
 .page4-text3{
   font-size: 12px;
   width: 285px;
-    top: 500px;
+    top: 540px;
     left: 965px;
     opacity: 0;
     position: absolute;
@@ -685,5 +692,11 @@ body {
       opacity: 1;
       top: 0px;
   }
-  
 
+  .page13-wrapper {
+      position: relative;
+      height:720px;
+      width: 1080px;
+      top: 17580px;
+      opacity: 1;
+  }
