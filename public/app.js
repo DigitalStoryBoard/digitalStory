@@ -37,11 +37,81 @@ angular.module("threeQuestions", [])
 
   //////// cover page - landing page////////////////
 
+  function song (event) {
+    document.getElementById('myTune').play();
+  }
+
+  function fadeout(event) {
+    $('#myTune').animate({volume: 0}, 3000);
+    }
+
+  function fadein(event) {
+    $('#myTune').animate({volume: 0.5}, 3000);
+    }
+
+  function wind (event) {
+      document.getElementById('wind').play();
+    }
+
+  function windout(event) {
+      $('#wind').animate({volume: 0}, 3000);
+      }
+
+  function windup(event) {
+      $('#wind').animate({volume: 1}, 3000);
+          }
+
+    function lakeup (event) {
+          document.getElementById('lake').volume-=0.5;
+        }
+
+    function lake (event) {
+        document.getElementById('lake').play();
+      }
+
+    function lakeout(event) {
+        $('#lake').animate({volume: 0}, 3000);
+        }
+
+    function windin(event) {
+        $('#wind').animate({volume: 1}, 3000);
+        }
+
+    function impact (event) {
+        document.getElementById('impact').play();
+      }
+
+    function rope (event) {
+          document.getElementById('rope').play();
+        }
+
+    function ropeout(event) {
+          $('#rope').animate({volume: 0}, 5000);
+        }
+
+    function shovel (event) {
+        $('#shovel').animate({volume: .5}, 1000)
+          document.getElementById('shovel').play();
+        }
+
+    function shovelout(event) {
+          $('#shovel').animate({volume: 0}, 5000);
+        }
+
+    function rain (event) {
+          document.getElementById('rain').play();
+        }
+
+    function rainout(event) {
+          $('#rain').animate({volume: 0}, 5000);
+        }
+
   var coverFadeIn = new ScrollMagic.Scene({
     triggerElement: '.cover-wrapper',
     triggerHook: 1,
     offset: 600
   })
+  .on("start", song)
   .setClassToggle('.cover-wrapper', 'fade-in') // add class to project01
   .addTo(controller);
 
@@ -51,13 +121,14 @@ angular.module("threeQuestions", [])
     triggerHook: .5,
     offset: 700
   })
+  .on("start", fadeout)
   .setClassToggle('.cover-wrapper', 'fade-out') // add class to project01
-  .addIndicators({
-    name: 'cover scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  }) // this requires a plugin
+  // .addIndicators({
+  //   name: 'cover scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -85,6 +156,7 @@ angular.module("threeQuestions", [])
   .addTo(controller);
 
   var coverTitle3FadeIn = new ScrollMagic.Scene({})
+
   .setTween(TweenMax.from(".cover-title3", 1.1, {opacity: 0, scale: 3, delay: 8.5, ease: Power2.easeIn, y: 0}))
   .addTo(controller);
 
@@ -97,13 +169,14 @@ angular.module("threeQuestions", [])
     offset: 100,
     duration: 300
   })
+  .on("start", wind)
   .setTween(".page1-bg", {delay: 1.5, opacity: 1})
-  .addIndicators({
-    name: 'fade NikoliaBg scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade NikoliaBg scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -114,12 +187,12 @@ angular.module("threeQuestions", [])
     duration: 0
   })
   .setTween(".page1-nikText", {opacity: 1, scale: 2})
-  .addIndicators({
-    name: 'fade NikoliaTxt scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade NikoliaTxt scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -139,14 +212,15 @@ angular.module("threeQuestions", [])
     offset: 800,
     duration: 600
   })
+  .on("start", windout)
   .setTween(".page1-bg", {opacity: 0})
   .setClassToggle('.page1-bg', 'fade-in') // add class to project01
-  .addIndicators({
-    name: 'fadeOut NikoliaBg scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fadeOut NikoliaBg scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -169,13 +243,15 @@ var page2FadinBg = new ScrollMagic.Scene({
   offset: 100,
   duration: 1000
 })
+.on("start", lakeup)
+.on("start", lake)
 .setTween(".page2-bg", 7, {delay: 2.2, opacity: 1})
-.addIndicators({
-  name: 'fade page2Bg scene',
-  colorTrigger: 'black',
-  colorStart: '#75C695',
-  colorEnd: 'pink'
-})
+// .addIndicators({
+//   name: 'fade page2Bg scene',
+//   colorTrigger: 'black',
+//   colorStart: '#75C695',
+//   colorEnd: 'pink'
+// })
 .addTo(controller);
 
 
@@ -206,12 +282,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.5,
     offset: 700
   })
-  .addIndicators({
-    name: 'fade page2animation scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page2animation scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller)
   .setTween(tl);
 
@@ -225,12 +301,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     duration: 9000
   })
   .setPin('.page3-kite2', {pushFollowers: true})
-  .addIndicators({
-    name: 'fade page2kite scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page2kite scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -246,12 +322,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.5,
     offset: 675
   })
-  .addIndicators({
-    name: 'fade page2animation scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page2animation scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller)
   .setTween(tl2);
 
@@ -267,12 +343,14 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.5,
     offset: -150
   })
-  .addIndicators({
-    name: 'fade page3kite',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page3kite',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
+  .on("start", lakeout)
+  .on("start", windin)
   .addTo(controller)
   .setTween(tl3);
 
@@ -283,13 +361,14 @@ var page2FadinBg = new ScrollMagic.Scene({
     offset: 200,
     duration: 2000
   })
+
   .setPin('.page3-bg', {pushFollowers: true})
-  .addIndicators({
-    name: 'pin page3wrapper',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'pin page3wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -305,12 +384,12 @@ var page2FadinBg = new ScrollMagic.Scene({
       triggerHook: 0.5,
       offset: 700
     })
-    .addIndicators({
-      name: 'fade page3animationtext scene',
-      colorTrigger: 'black',
-      colorStart: '#75C695',
-      colorEnd: 'pink'
-    })
+    // .addIndicators({
+    //   name: 'fade page3animationtext scene',
+    //   colorTrigger: 'black',
+    //   colorStart: '#75C695',
+    //   colorEnd: 'pink'
+    // })
     .addTo(controller)
     .setTween(tl4);
 
@@ -323,13 +402,14 @@ var page2FadinBg = new ScrollMagic.Scene({
     offset: 200,
     duration: 4100
   })
+  .on("start", windout)
   .setPin('.page4-bg', {pushFollowers: true})
-  .addIndicators({
-    name: 'pin page4wrapper',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'pin page4wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -340,7 +420,7 @@ var page2FadinBg = new ScrollMagic.Scene({
       tl5.add( TweenMax.to(".page4-text2", 3, {delay: 2, opacity: 1}))
       tl5.add( TweenMax.to(".page4-pane3", 3, {delay: 2, opacity: 1, y: -500}))
       tl5.add( TweenMax.to(".page4-text3", 3, {opacity: 1}))
-      tl5.add( TweenMax.to(".page4-pane2-coconut", 4, {delay: 5, opacity: 1, y: 499,}))
+      tl5.add( TweenMax.to(".page4-pane2-coconut", 4, {delay: 5, opacity: 1, y: 499, onComplete: impact}))
       tl5.add( TweenMax.to(".page4-pane2-coconut", 1, {opacity: 0}))
       tl5.add( TweenMax.to(".page4-bg", 10, {delay: 2, opacity: 0}));
 
@@ -351,12 +431,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.5,
     offset: 50
   })
-  .addIndicators({
-    name: 'fade page4animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page4animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller)
   .setTween(tl5);
 
@@ -369,13 +449,14 @@ var page2FadinBg = new ScrollMagic.Scene({
     offset: -100,
     duration: 3000
   })
+  .on("start", rope)
   .setPin('.page5-bg', {pushFollowers: true})
-  .addIndicators({
-    name: 'pin page5wrapper',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'pin page5wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -390,12 +471,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.5,
     offset: 50
   })
-  .addIndicators({
-    name: 'fade page5animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page5animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller)
   .setTween(tl6);
 
@@ -409,12 +490,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     duration: 2800
   })
   .setPin('.page6-bg', {pushFollowers: true})
-  .addIndicators({
-    name: 'pin page6wrapper',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'pin page6wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -433,12 +514,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.5,
     offset: 50
   })
-  .addIndicators({
-    name: 'fade page6animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page6animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller)
   .setTween(tl7);
 
@@ -452,17 +533,17 @@ var page2FadinBg = new ScrollMagic.Scene({
     duration: 5000
   })
   .setPin('.page7-bg', {pushFollowers: true})
-  .addIndicators({
-    name: 'pin page7wrapper',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'pin page7wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
   var tl8 = new TimelineMax({});
-      tl8.add( TweenMax.to(".page7-bg", 3, {opacity: 1, delay: .6}))
+      tl8.add( TweenMax.to(".page7-bg", 3, {opacity: 1, delay: .6,}))
       tl8.add( TweenMax.to(".page7-animals-tree", 5, {x: -20}), '-=3')
       tl8.add( TweenMax.to(".page7-cloudsLeft", 5, {scale: 1.4, opacity: 1, x: 15}), '-=5')
       tl8.add( TweenMax.to(".page7-cloudsRight", 5, {scale: 1.4, opacity: 1}), '-=5')
@@ -477,12 +558,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.1,
     offset: 250
   })
-  .addIndicators({
-    name: 'fade page7animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page7animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller)
   .setTween(tl8);
 
@@ -493,12 +574,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.1,
     offset: 250
   })
-  .addIndicators({
-    name: 'fade page7animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page7animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller)
   .setTween(".page7-bg", 1, {opacity: 0, delay: 3.5});
 
@@ -512,12 +593,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     duration: 5000
   })
   .setPin('.page8-bg', {pushFollowers: true})
-  .addIndicators({
-    name: 'pin page7wrapper',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'pin page7wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -537,12 +618,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.1,
     offset: 250
     })
-  .addIndicators({
-    name: 'fade page8animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-    })
+  // .addIndicators({
+  //   name: 'fade page8animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  //   })
   .addTo(controller)
   .setTween(tl9);
 
@@ -553,12 +634,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.1,
     offset: 250
     })
-  .addIndicators({
-    name: 'fade page8animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-    })
+  // .addIndicators({
+  //   name: 'fade page8animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  //   })
   .addTo(controller)
   .setTween(".page8-bg", .3, {delay: 1, opacity: 0});
 
@@ -572,12 +653,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     duration: 5000
     })
   .setPin('.page9-bg', {pushFollowers: true})
-  .addIndicators({
-    name: 'pause page9wrapper',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-    })
+  // .addIndicators({
+  //   name: 'pause page9wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  //   })
   .addTo(controller);
 
 
@@ -588,12 +669,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     duration: 5000
     })
   .setPin('.page9-bg', {delay: 5, pushFollowers: true})
-  .addIndicators({
-    name: 'pin page9wrapper',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-    })
+  // .addIndicators({
+  //   name: 'pin page9wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  //   })
   .addTo(controller);
 
 
@@ -603,7 +684,7 @@ var page2FadinBg = new ScrollMagic.Scene({
   tl10.add( TweenMax.to(".page9-clouds", 5, {scale: 1.2, opacity: 1, x: 25}), '-=5')
   tl10.add( TweenMax.from(".page9-trees", 5, {scale: 1.2, opacity: 0}), '-=5')
   tl10.add( TweenMax.to(".page9-text", 2, {opacity: 1, ease: Power2.easeIn, y: 0}), '-=8')
-  tl10.add( TweenMax.to(".page9-text", 1, {opacity: 1}, '-=3'));;
+  tl10.add( TweenMax.to(".page9-text", 1, {opacity: 1, onComplete: ropeout}, '-=3'));;
 
   var page9anim = new ScrollMagic.Scene({
     triggerElement: ".page9-bg",
@@ -611,12 +692,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.5,
     offset: -1000
   })
-  .addIndicators({
-    name: 'fade page9animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page9animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller)
   .setTween(tl10);
 
@@ -627,12 +708,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.5,
     offset: 0
   })
-  .addIndicators({
-    name: 'fade page92animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page92animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller)
   .setTween(".page9-bg", 1, {opacity: 0, delay: 4});
 
@@ -646,12 +727,12 @@ var page2FadinBg = new ScrollMagic.Scene({
     duration: 10000
   })
   .setPin('.page10-bg', {delay: 5, pushFollowers: true})
-  .addIndicators({
-    name: 'pin page10wrapper',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'pin page10wrapper',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
   .addTo(controller);
 
 
@@ -676,12 +757,13 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerHook: 0.5,
     offset: 400
   })
-  .addIndicators({
-    name: 'fade page10animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
+  // .addIndicators({
+  //   name: 'fade page10animationtext scene',
+  //   colorTrigger: 'black',
+  //   colorStart: '#75C695',
+  //   colorEnd: 'pink'
+  // })
+  .on('start', shovel)
   .addTo(controller)
   .setTween(tl11);
 
@@ -690,32 +772,53 @@ var page2FadinBg = new ScrollMagic.Scene({
     triggerElement: ".page10-bg",
     duration: 10000,
     triggerHook: 0.5,
-    offset: 0,
+    offset: 0
   })
-  .addIndicators({
-    name: 'fade page102animationtext scene',
-    colorTrigger: 'black',
-    colorStart: '#75C695',
-    colorEnd: 'pink'
-  })
-  .addTo(controller)
-  .setTween(".page10-bg", 1, {opacity: 0, delay: 4});
-
-  //////////////////////page12///////////////////
-
-  // var page12PinBg = new ScrollMagic.Scene({
-  //   triggerElement: '.page12-bg',
-  //   triggerHook: .5,
-  //   offset: 300,
-  //   duration: 10000
-  // })
-  // .setPin('.page12-bg', {delay: 5, pushFollowers: true})
   // .addIndicators({
-  //   name: 'pin page12wrapper',
-  //   colorTrigger: 'black',
-  //   colorStart: '#75C695',
-  //   colorEnd: 'pink'
+  //   // name: 'fade page102animationtext scene',
+  //   // colorTrigger: 'black',
+  //   // colorStart: '#75C695',
+  //   // colorEnd: 'pink'
   // })
-  // .addTo(controller);
+
+  .setTween(".page10-bg", 1, {opacity: 0, delay: 4, onComplete: shovelout})
+  .addTo(controller);
+
+////////////////page12/////////////////
+// var page12anim = new ScrollMagic.Scene({
+//   triggerElement: "page12-wrapper",
+//   duration: 10000,
+//   triggerHook: 0.5,
+//   offset: 0,
+// })
+// .addIndicators({
+//   name: 'fade page12animationtext scene',
+//   colorTrigger: 'black',
+//   colorStart: '#75C695',
+//   colorEnd: 'pink'
+// })
+// .on("start", rain)
+// .on("start", wind)
+// .addTo(controller);
+
+//////////////////end rain/////////////
+
+// var page13anim = new ScrollMagic.Scene({
+//   triggerElement: "#threerain",
+//   duration: 10000,
+//   triggerHook: 0.5,
+//   offset: 0,
+// })
+// .addIndicators({
+//   name: 'fade page12animationtext scene',
+//   colorTrigger: 'black',
+//   colorStart: '#75C695',
+//   colorEnd: 'pink'
+// })
+// .on("start", rainout)
+// .on("start", windout)
+// .addTo(controller);
+
+
 
 });

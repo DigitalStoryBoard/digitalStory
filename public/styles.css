@@ -45,7 +45,7 @@ body {
 .titleElements {
   width: 1080px;
   height: 720px;
-  top: 5px;
+  top: 10px;
   left: 360px;
   position: absolute;
 }
