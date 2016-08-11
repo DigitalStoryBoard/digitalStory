@@ -3,7 +3,10 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	var count = 0;
 
 	var resetRender = function(){
-		// need code to arrest the render
+		document.getElementById("threerain")
+	    	.removeChild(document.getElementById("threerain").childNodes[0]); //need code to arrest the render
+	    	//init();
+	    	//animate();
 		};
 	
 	   var runCode = setInterval(function (){
@@ -42,6 +45,12 @@ angular.module('threeQuestions').controller('render1Control', function(){
 
 	    var planeGeometry = new THREE.PlaneGeometry(window.innerWidth, window.innerHeight);
 
+	    var planeMaterial1 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page12/page12.png'),
+	        transparent: false
+		});
+
 	    var planeMaterial2 = new THREE.MeshBasicMaterial({
 	    	color:0xffffff,
 	    	map: THREE.ImageUtils.loadTexture('images/page18/page18.png'),
@@ -54,11 +63,89 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	      	transparent: false
 		});
 
-	    var planeMaterial1 = new THREE.MeshBasicMaterial({
+		var planeMaterial4 = new THREE.MeshBasicMaterial({
 	    	color:0xffffff,
-	        map: THREE.ImageUtils.loadTexture('images/page12/page12.png'),
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page15.png'),
 	        transparent: false
 		});
+
+		var planeMaterial5 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page16.png'),
+	        transparent: false
+		});
+
+		var planeMaterial6 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page17.png'),
+	        transparent: false
+		});
+
+		var planeMaterial7 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page18.png'),
+	        transparent: false
+		});
+
+		var planeMaterial8 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page19.png'),
+	        transparent: false
+		});
+
+		var planeMaterial9 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page20.png'),
+	        transparent: false
+		});
+
+		var planeMaterial10 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page21.png'),
+	        transparent: false
+		});// need six more planes after this one.
+
+		var planeMaterial11 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page22.png'),
+	        transparent: false
+		});
+
+		var planeMaterial12 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page23.png'),
+	        transparent: false
+		});
+
+		var planeMaterial13 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page24.png'),
+	        transparent: false
+		});
+
+		var planeMaterial14 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page25.png'),
+	        transparent: false
+		});
+
+		var planeMaterial15 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page26.png'),
+	        transparent: false
+		});
+
+		var planeMaterial16 = new THREE.MeshBasicMaterial({
+	    	color:0xffffff,
+	        map: THREE.ImageUtils.loadTexture('images/page13-16/Page27.png'),
+	        transparent: false
+		});
+
+		plane1 =  new THREE.Mesh(planeGeometry, planeMaterial1);
+	    plane1.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane1.position.z = -400;
+	    plane1.receiveShadow = false;
+	    scene.add(plane1);
 
 	    plane2 =  new THREE.Mesh(planeGeometry, planeMaterial2);
 	    plane2.rotation.y = 0.03 *Math.PI;//plane tilt
@@ -75,14 +162,96 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    plane3.receiveShadow = false;
 	    scene.add(plane3);
 
-	    plane1 =  new THREE.Mesh(planeGeometry, planeMaterial1);
-	    plane1.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane1.position.z = -400;
-	    plane1.receiveShadow = false;
-	    scene.add(plane1);
+	    plane4 =  new THREE.Mesh(planeGeometry, planeMaterial4);
+	    plane4.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane4.position.z = 300;
+	    plane4.position.y = -800;
+	    plane4.receiveShadow = false;
+	    scene.add(plane4);
 
-	    
+	    plane5 =  new THREE.Mesh(planeGeometry, planeMaterial5);
+	    plane5.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane5.position.z = 400;
+	    plane5.position.y = 800;
+	    plane5.receiveShadow = false;
+	    scene.add(plane5);
 
+	    plane6 =  new THREE.Mesh(planeGeometry, planeMaterial6);
+	    plane6.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane6.position.z = 600;
+	    plane6.position.y = -800;
+	    plane6.receiveShadow = false;
+	    scene.add(plane6);
+
+	    plane7 =  new THREE.Mesh(planeGeometry, planeMaterial7);
+	    plane7.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane7.position.z = 800;
+	    plane7.position.y = 800;
+	    plane7.receiveShadow = false;
+	    scene.add(plane7);
+
+	    plane8 =  new THREE.Mesh(planeGeometry, planeMaterial8);
+	    plane8.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane8.position.z = 1200;
+	    plane8.position.y = -800;
+	    plane8.receiveShadow = false;
+	    scene.add(plane8);
+
+	    plane9 =  new THREE.Mesh(planeGeometry, planeMaterial9);
+	    plane9.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane9.position.z = 1400;
+	    plane9.position.y = 800;
+	    plane9.receiveShadow = false;
+	    scene.add(plane9);
+
+	    plane10 =  new THREE.Mesh(planeGeometry, planeMaterial10);
+	    plane10.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane10.position.z = 1600;
+	    plane10.position.y = -800;
+	    plane10.receiveShadow = false;
+	    scene.add(plane10);
+
+	    plane11 =  new THREE.Mesh(planeGeometry, planeMaterial11);
+	    plane11.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane11.position.z = 1800;
+	    plane11.position.y = 800;
+	    plane11.receiveShadow = false;
+	    scene.add(plane11);
+
+	    plane12 =  new THREE.Mesh(planeGeometry, planeMaterial12);
+	    plane12.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane12.position.z = 2000;
+	    plane12.position.y = -800;
+	    plane12.receiveShadow = false;
+	    scene.add(plane12);
+
+	    plane13 =  new THREE.Mesh(planeGeometry, planeMaterial13);
+	    plane13.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane13.position.z = 2200;
+	    plane13.position.y = 800;
+	    plane13.receiveShadow = false;
+	    scene.add(plane13);
+
+	    plane14 =  new THREE.Mesh(planeGeometry, planeMaterial14);
+	    plane14.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane14.position.z = 2400;
+	    plane14.position.y = -800;
+	    plane14.receiveShadow = false;
+	    scene.add(plane14);
+
+	    plane15 =  new THREE.Mesh(planeGeometry, planeMaterial15);
+	    plane15.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane15.position.z = 2600;
+	    plane15.position.y = 800;
+	    plane15.receiveShadow = false;
+	    scene.add(plane15);
+
+	    plane16 =  new THREE.Mesh(planeGeometry, planeMaterial16);
+	    plane16.rotation.y = -0.00 * Math.PI;//plane tilt
+	    plane16.position.z = 2800;
+	    plane16.position.y = -800;
+	    plane16.receiveShadow = false;
+	    scene.add(plane16); 
 
 	 	spotLight = new THREE.SpotLight(0xffffff);
 	    spotLight.castShadow = false;
@@ -179,9 +348,11 @@ angular.module('threeQuestions').controller('render1Control', function(){
 	    
 
      	camera.position.z += 0.20;
-     	//console.log("camera is " + camera.position.z)
+     	console.log("camera is " + camera.position.z)
     	particleSystem.position.y -= 1.0;
     	particleSystem.position.x -= 0.5;
+
+    	plane1.position.z += 0.10;
 
     	if(camera.position.z >= 150){
     		plane2.position.y += 1.0;
@@ -196,6 +367,23 @@ angular.module('threeQuestions').controller('render1Control', function(){
     	if(plane3.position.y < 0){
     		plane3.position.y = 0;
     	}
+    	if(camera.position.z > 750){
+    		plane4.position.y +=0.8;
+    		plane4.position.z += 0.30;
+    	}
+    	if(camera.position.z > 900){
+    		plane5.position.y -= .8;
+    		plane5.position.z += 0.3;
+    	}
+    	if(plane5.position.y < 0){
+    		plane5.position.y = 0;
+    		plane5.position.z -= 0.20;
+    	}
+    	if(camera.position.z > 1000){
+    		plane6.position.y += 0.8;
+    		plane6.position.z += 0.20;
+    	}
+
 
     	if (particleSystem.position.y < -201){
     		particleSystem.position.y = 200;
@@ -216,7 +404,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
             leafSystem.position.x = 700;
         }
        
-        if(camera.position.z < 750){
+        if(camera.position.z < 3750){
 	        renderer.render(scene, camera);
 	        requestAnimationFrame( animate );
     	}else{
