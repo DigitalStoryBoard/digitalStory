@@ -435,13 +435,6 @@ body {
     opacity: 0;
     position: absolute;
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> master
-
-
 
 .page7-wrapper {
     position: relative;
@@ -681,7 +674,7 @@ body {
 
   .page12-wrapper {
       position: relative;
-      top: 16000px;
+      top: 16100px;
   }
 
   .page12-bg{
@@ -692,5 +685,5 @@ body {
       opacity: 1;
       top: 0px;
   }
-
+  
 
