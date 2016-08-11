@@ -185,7 +185,7 @@ angular.module('threeQuestions').controller('render1Control', function(){
 
 	    plane7 =  new THREE.Mesh(planeGeometry, planeMaterial7);
 	    plane7.rotation.y = -0.00 * Math.PI;//plane tilt
-	    plane7.position.z = 800;
+	    plane7.position.z = 700;
 	    plane7.position.y = 800;
 	    plane7.receiveShadow = false;
 	    scene.add(plane7);
