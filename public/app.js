@@ -12,6 +12,12 @@ angular.module("threeQuestions", [])
     controller: 'render1Control'
   }
 })
+.directive("comments",function(){
+  return {
+    templateUrl: 'comments.html',
+    controller: 'commentCtrl'
+  };
+})
 .controller("landingCtrl", function(){
 
   var flightpath = {
